@@ -15,9 +15,9 @@ class Board:
     
     # initialize a 2D array of size width x height with blank tiles
     possibleCoordinates = []
-    for x in range(0, width):
+    for y in range(0, height):
       row = []
-      for y in range(0, height):
+      for x in range(0, width):
         t = Tile()
         row.append(t)
         possibleCoordinates.append((x,y))
@@ -85,7 +85,7 @@ class Board:
       # temporarily assume this is the last bomb
       foundAllBombs = True
       for i, j in self.bombs:
-        bombTile = self.tiles[j][i]
+        bombTile = self.tiles[i][j]
         if not bombTile.flagged:
           foundAllBombs = False
       self.gameWin = foundAllBombs
