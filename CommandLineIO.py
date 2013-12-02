@@ -17,6 +17,7 @@ class CommandLineIO:
     def __init__(self, board):
         self.board = board
     
+    # TODO: Need to add line numbers to the board printout
     def prettyPrintBoard(self):
         s = ""
         for row in self.board.tiles:
@@ -38,6 +39,7 @@ class CommandLineIO:
         while not self.board.gameOver and not self.board.gameWin:
             self.prettyPrintBoard()
             userInput = raw_input()
+            # TODO: Need to sanitize user input
             tokens = userInput.split(" ")
             command = tokens[0]
             x = int(tokens[1])
